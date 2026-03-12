@@ -11,9 +11,7 @@
     "lint": "echo 'No linting needed for HTML/CSS'"
   },
   "dependencies": {
-    "@google/genai": "^1.29.0",
     "@tailwindcss/vite": "^4.1.14",
-    "better-sqlite3": "^12.4.1",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
     "vite": "^6.2.0"
