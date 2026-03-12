@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #253C6C;
+  --color-seagrass: #2CA589;
+  --color-pearaqua: #84DCCF;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-navy bg-gray-100;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.btn-primary {
+  @apply bg-pearaqua hover:bg-pearaqua/90 text-navy font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-6 text-navy;
+}
+
+.section-subtitle {
+  @apply text-lg text-navy/70 mb-12;
+}

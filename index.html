@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carro Certo - Vistoria Automotiva</title>
+    <link rel="stylesheet" href="/src/index.css">
+  </head>
+  <body class="selection:bg-pearaqua selection:text-navy">
+    <div id="root">
+      <!-- Navbar -->
+      <nav class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center">
+            <a href="#home" class="home-link flex items-center gap-2">
+              <div class="flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pearaqua"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+              </div>
+              <span class="logo-span text-2xl font-black tracking-tighter text-white">
+                CARRO <span class="logo-accent text-pearaqua">CERTO</span>
+              </span>
+            </a>
+            
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-8">
+                <a href="#home" class="home-link nav-text text-white/80 hover:text-white px-3 py-2 rounded-md text-base font-semibold transition-colors">Home</a>
+                <a href="#fazemos" class="nav-link nav-text text-white/80 hover:text-white px-3 py-2 rounded-md text-base font-semibold transition-colors">O que Fazemos</a>
+                <a href="#diferenciais" class="nav-link nav-text text-white/80 hover:text-white px-3 py-2 rounded-md text-base font-semibold transition-colors">Diferenciais</a>
+                <a href="#servicos-detalhes" class="nav-link nav-text text-white/80 hover:text-white px-3 py-2 rounded-md text-base font-semibold transition-colors">Serviços</a>
+                <a href="/blog" id="blog-link" class="nav-text text-white/80 hover:text-white px-3 py-2 rounded-md text-base font-semibold transition-colors">Blog</a>
+                <a href="#agendamento" class="nav-link nav-text text-white/80 hover:text-white px-3 py-2 rounded-md text-base font-semibold transition-colors">Agendamento</a>
+                <a href="#contato" class="nav-link nav-text text-white/80 hover:text-white px-3 py-2 rounded-md text-base font-semibold transition-colors">Contato</a>
+              </div>
+            </div>
+
+            <div class="md:hidden">
+              <button id="mobile-menu-btn" class="text-white p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 overflow-hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#home" class="home-link text-navy hover:bg-gray-50 block px-3 py-4 text-lg font-medium">Home</a>
+            <a href="#fazemos" class="nav-link text-navy hover:bg-gray-50 block px-3 py-4 text-lg font-medium">O que Fazemos</a>
+            <a href="#diferenciais" class="nav-link text-navy hover:bg-gray-50 block px-3 py-4 text-lg font-medium">Diferenciais</a>
+            <a href="#servicos-detalhes" class="nav-link text-navy hover:bg-gray-50 block px-3 py-4 text-lg font-medium">Serviços</a>
+            <a href="/blog" id="blog-link-mobile" class="text-navy hover:bg-gray-50 block px-3 py-4 text-lg font-medium">Blog</a>
+            <a href="#agendamento" class="nav-link text-navy hover:bg-gray-50 block px-3 py-4 text-lg font-medium">Agendamento</a>
+            <a href="#contato" class="nav-link text-navy hover:bg-gray-50 block px-3 py-4 text-lg font-medium">Contato</a>
+          </div>
+        </div>
+      </nav>
+
+      <div id="home-content">
+        <!-- Hero -->
+        <section id="home" class="relative h-screen flex items-center overflow-hidden">
+          <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-navy/70 z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/50 to-transparent z-20"></div>
+            <video autoPlay loop muted playsInline class="w-full h-full object-cover opacity-60" poster="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=1920">
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-mechanic-checking-the-engine-of-a-car-4847-large.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-4xl">
+              <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
+                Compre com segurança. <br />
+                <span class="text-pearaqua">Evite prejuízos.</span> <br />
+                Negocie com confiança.
+              </h1>
+              <p class="text-xl text-white/90 mb-10 leading-relaxed">
+                Comprar um carro usado pode ser um ótimo negócio, ou pode se tornar um grande problema. 
+                Estamos aqui para tornar sua experiência de compra a melhor possível!
+              </p>
+              <a href="https://wa.me/5511943201828" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg px-10 py-4 flex items-center gap-3 group w-fit">
+                Agende a Vistoria
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Animated Checklist Elements -->
+          <div class="absolute right-10 bottom-20 z-30 hidden lg:block">
+            <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl space-y-4 w-64">
+              <div class="flex items-center gap-3 text-pearaqua">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span class="text-white text-sm font-bold">Estrutura OK</span>
+              </div>
+              <div class="flex items-center gap-3 text-pearaqua">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span class="text-white text-sm font-bold">Motor OK</span>
+              </div>
+              <div class="flex items-center gap-3 text-pearaqua">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span class="text-white text-sm font-bold">Pintura OK</span>
+              </div>
+              <div class="flex items-center gap-3 text-pearaqua">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span class="text-white text-sm font-bold">Scanner OK</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- What We Do -->
+        <section id="fazemos" class="py-24 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <h2 class="text-pearaqua font-bold tracking-widest text-sm uppercase mb-4">O QUE FAZEMOS</h2>
+                <h3 class="text-4xl md:text-5xl font-black text-navy mb-8 leading-tight">
+                  Muito além de um simples <br />
+                  <span class="text-pearaqua">laudo cautelar!</span>
+                </h3>
+                <div class="space-y-6 text-navy/80 text-lg leading-relaxed">
+                  <p>
+                    Um laudo cautelar tradicional verifica apenas estrutura, procedência legal e histórico de sinistros. Isso é importante — mas está longe de mostrar a real condição de um carro.
+                  </p>
+                  <p>
+                    Na nossa vistoria pré-compra, você recebe uma análise completa do veículo. Avaliamos não só a parte estrutural e documental, mas também mecânica, arrefecimento, rodas e suspensões, lataria, vidros, iluminação, interior do veículo, funcionamento dos equipamentos e todo o sistema de ar-condicionado.
+                  </p>
+                  <p>
+                    Além disso, realizamos varredura eletrônica com scanner profissional, analisando os principais parâmetros do motor e dos sistemas eletrônicos.
+                  </p>
+                </div>
+                
+                <div class="mt-10 p-6 bg-pearaqua/10 border-l-4 border-pearaqua rounded-r-2xl">
+                  <p class="text-navy font-bold text-xl">
+                    No total, mais de <span class="text-2xl">300</span> itens são verificados e testados.
+                  </p>
+                </div>
+              </div>
+
+              <div class="space-y-12">
+                <div class="bg-gray-50 p-8 rounded-[2rem] border border-gray-100 shadow-sm">
+                  <h4 class="text-2xl font-bold text-navy mb-6">Evite surpresas caras</h4>
+                  <p class="text-navy/70 mb-8">
+                    O objetivo é simples: evitar surpresas caras depois da compra. Problemas ocultos — como junta de cabeçote comprometida, contaminação do sistema de arrefecimento ou falhas eletrônicas — podem facilmente gerar reparos acima de <strong>R$ 10.000</strong>.
+                  </p>
+                  
+                  <div class="space-y-4">
+                    <h5 class="font-bold text-navy uppercase text-xs tracking-widest mb-4">LEGENDA DO RELATÓRIO</h5>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-100">
+                        <span class="text-2xl">🟢</span>
+                        <div>
+                          <p class="font-bold text-sm text-navy">Aprovado</p>
+                          <p class="text-xs text-navy/60">Funcionamento normal</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-100">
+                        <span class="text-2xl">🟡</span>
+                        <div>
+                          <p class="font-bold text-sm text-navy">Com apontamento</p>
+                          <p class="text-xs text-navy/60">Atenção recomendada</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-100">
+                        <span class="text-2xl">🔴</span>
+                        <div>
+                          <p class="font-bold text-sm text-navy">Risco</p>
+                          <p class="text-xs text-navy/60">Possível problema relevante</p>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-gray-100">
+                        <span class="text-2xl">⛔</span>
+                        <div>
+                          <p class="font-bold text-sm text-navy">Reprovado</p>
+                          <p class="text-xs text-navy/60">Falha confirmada</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="relative">
+                  <div class="absolute -inset-4 bg-pearaqua/20 blur-2xl rounded-full opacity-50"></div>
+                  <div class="relative bg-navy text-white p-8 rounded-[2rem] shadow-xl">
+                    <p class="text-lg leading-relaxed mb-6">
+                      Para tornar tudo ainda mais transparente, o relatório inclui <strong>fotos, vídeos e explicações diretas</strong>, para que você entenda exatamente o estado do carro antes de decidir.
+                    </p>
+                    <p class="text-pearaqua font-black text-2xl italic">
+                      Assim, você compra com informação — e não com surpresa.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Diferenciais Comparison -->
+        <section id="diferenciais-tabela" class="py-24 bg-gray-200 text-navy overflow-hidden relative">
+          <div class="absolute top-0 right-0 w-1/3 h-full bg-navy/10 skew-x-12 transform translate-x-20"></div>
+          
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight">Diferenciais</h2>
+              <p class="text-navy/70 text-lg max-w-2xl mx-auto">
+                Entenda por que a Carro Certo é a escolha definitiva para quem busca segurança real na compra de um seminovo.
+              </p>
+            </div>
+
+            <div class="overflow-x-auto bg-white rounded-3xl shadow-xl border border-white/10">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-navy text-white">
+                    <th class="p-6 font-bold uppercase tracking-wider text-sm w-[30%]">Item de Avaliação</th>
+                    <th class="p-6 font-bold uppercase tracking-wider text-sm text-center">Carro Certo</th>
+                    <th class="p-6 font-bold uppercase tracking-wider text-sm text-center">Vistoria Cautelar Tradicional</th>
+                    <th class="p-6 font-bold uppercase tracking-wider text-sm hidden lg:table-cell">Comentários</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <!-- Row 1: Motor -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Motor</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Testamos compressão, cilindros, virabrequim e comando de válvulas. Identificamos vazamentos e problemas de admissão e escape antes que eles virem uma conta salgada na oficina.</td>
+                  </tr>
+                  <!-- Row 2: Componentes Auxiliares -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Componentes Auxiliares do Motor</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Correias, polias, bobinas, velas, retentor de volante, catalisador, sonda lambda, cânister, coxins e muito mais. Os componentes que sustentam o motor em funcionamento – todos inspecionados.</td>
+                  </tr>
+                  <!-- Row 3: Transmissão -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Transmissão</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Trocas de marcha travando? Engasgando? Identificamos falhas na transmissão antes que elas te deixem na mão – ou no prejuízo.</td>
+                  </tr>
+                  <!-- Row 4: Arrefecimento -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Sistema de Arrefecimento</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Radiador, eletroventilador, bomba d'água, válvula termostática e mangueiras: inspecionamos tudo e detectamos qualquer sinal de corrosão ou ebulição. Um motor superaquecido pode custar caro – e você não vai descobrir isso depois de assinar o contrato.</td>
+                  </tr>
+                  <!-- Row 5: Elétrica -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Elétrica</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Bateria, alternador e chicote elétrico avaliados. Problemas elétricos são invisíveis a olho nu – e caros de resolver. Aqui, nada passa despercebido.</td>
+                  </tr>
+                  <!-- Row 6: Ar Condicionado -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Ar Condicionado</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Manutenção de ar condicionado pode pesar no bolso. Por isso medimos a temperatura mínima atingida e inspecionamos condensador, filtro secador, mangueiras e compressor. Você saberá exatamente o que está comprando.</td>
+                  </tr>
+                  <!-- Row 7: Quilometragem -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Adulterações de Quilometragem</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Cruzamos a quilometragem do odômetro com outros parâmetros reais de uso do carro. Adulteração de odômetro é mais comum do que parece – e aqui você não será enganado.</td>
+                  </tr>
+                  <!-- Row 8: Rodas -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Rodas</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Informamos a vida útil real dos pneus. Parece simples, mas pode representar uma troca imediata de R$ 1.000 ou mais logo após a compra.</td>
+                  </tr>
+                  <!-- Row 9: Suspensão -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Suspensão</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Inspeção minuciosa em amortecedores, molas, barras axiais, terminais, bieletas e demais componentes. Suspensão comprometida afeta segurança e gera custos altos – identificamos tudo antes.</td>
+                  </tr>
+                  <!-- Row 10: Freio -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Freio</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Pastilhas, discos, fluido, flexíveis, servo-freio e cilindro mestre: todos testados. Freio em dia não é opcional – é o que separa um carro seguro de um acidente.</td>
+                  </tr>
+                  <!-- Row 11: Teste de Rodagem -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Teste de Rodagem</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Seguimos um roteiro técnico de condução para identificar ruídos, falhas de resposta, vibrações e qualquer comportamento fora do padrão. Nenhum problema escapa do test drive profissional.</td>
+                  </tr>
+                  <!-- Row 12: Estofados -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Estofados</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Identificamos sinais de enchente, rasgos, manchas e odores. O interior do carro conta a história real de como ele foi tratado – e nós sabemos ler essa história.</td>
+                  </tr>
+                  <!-- Row 13: Scanner -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Scanner</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <div class="flex items-center justify-center gap-1">
+                        <svg class="w-7 h-7 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"></circle><line x1="8" y1="12" x2="16" y2="12" stroke-width="3"></line></svg>
+                        <span class="text-yellow-600 font-bold">*</span>
+                      </div>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Scanner sem taxa extra – e sem enrolação. Não apenas lemos códigos de erro: analisamos os parâmetros que realmente revelam a saúde do motor (ECT, Fuel Trim, MAP, Avanço de Ignição, TPS, Sondas Lambda, Carga do Motor, Pressão da Bomba de Combustível e Tensão da Bateria).</td>
+                  </tr>
+                  <!-- Row 14: Teste Funcional -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Teste Funcional</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <div class="flex items-center justify-center gap-1">
+                        <svg class="w-7 h-7 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"></circle><line x1="8" y1="12" x2="16" y2="12" stroke-width="3"></line></svg>
+                      </div>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Vai além do básico: testamos tomadas 12V e USB, maçanetas, temperatura do ar quente e frio, cintos de segurança, bancos, pedais e dezenas de outros itens que a vistoria tradicional simplesmente ignora.</td>
+                  </tr>
+                  <!-- Row 15: Avaliação da Pintura -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Avaliação da Pintura</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <div class="flex items-center justify-center gap-1">
+                        <svg class="w-7 h-7 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-green-600 font-bold">*</span>
+                      </div>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Mais de 100 pontos medidos com micrômetro. Identificamos qualquer repintura, massa ou serviço de lataria – por menor que seja. Você saberá exatamente o histórico da carroceria. E sem cobrar nada a mais por isso.</td>
+                  </tr>
+                  <!-- Row 16: Estrutura -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Estrutura (colunas, torres de amortecedor, longarinas, caixas de ar, assoalhos)</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">A estrutura é o esqueleto do carro – e dano estrutural é o tipo de problema que não tem conserto barato. Inspecionamos cada ponto crítico para garantir que o veículo não passou por batidas graves que comprometam sua segurança.</td>
+                  </tr>
+                  <!-- Row 17: Informações do Veículo -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Informações do Veículo, Chassi, Nº Motor, Nº Câmbio, etc.</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Conferimos e cruzamos todos os números de identificação do veículo. É a base de qualquer vistoria séria – e a primeira coisa que fazemos antes de qualquer outra avaliação.</td>
+                  </tr>
+                  <!-- Row 18: Débitos -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Débitos de IPVA, Licenciamento, Multas</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Antes de fechar negócio, você precisa saber se o carro que está comprando vem com dívidas escondidas. Consultamos todos os débitos para que nenhuma surpresa chegue junto com o documento.</td>
+                  </tr>
+                  <!-- Row 19: Histórico -->
+                  <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="p-6 font-bold text-navy">Histórico de Leilão, Furto, Sinistros e Restrições</td>
+                    <td class="p-6 text-center bg-pearaqua/5">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-center">
+                      <svg class="w-7 h-7 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </td>
+                    <td class="p-6 text-sm text-navy/70 hidden lg:table-cell">Um carro com passado problemático pode parecer perfeito por fora. Investigamos o histórico completo do veículo para garantir que você não está comprando uma dor de cabeça disfarçada de oportunidade.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-4 text-navy text-sm font-medium">
+              * Realiza em serviços pagos a parte
+            </div>
+          </div>
+        </section>
+
+        <!-- Differentials -->
+        <section id="diferenciais" class="py-24 bg-navy text-white overflow-hidden relative">
+          <div class="absolute top-0 right-0 w-1/3 h-full bg-seagrass/10 skew-x-12 transform translate-x-20"></div>
+          
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">
+                  Nossos Diferenciais <br />
+                  <span class="text-pearaqua">Não enviamos apenas vídeos.</span>
+                </h2>
+                <p class="text-white/70 text-lg mb-12">
+                  Diferente dos concorrentes que fazem apenas uma 'olhadinha' rápida, nós entregamos um dossiê completo sobre o seu futuro investimento.
+                </p>
+                
+                <div class="space-y-6">
+                  <div class="flex gap-4">
+                    <div class="mt-1 text-pearaqua">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-lg">Checklist técnico extremamente detalhado</h4>
+                      <p class="text-white/60 text-sm">Acesso total a cada item avaliado com nota final clara para o veículo.</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4">
+                    <div class="mt-1 text-pearaqua">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-lg">Análise estrutural profunda</h4>
+                      <p class="text-white/60 text-sm">Não apenas visual, mas técnica, focada na segurança passiva do carro.</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4">
+                    <div class="mt-1 text-pearaqua">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-lg">Scanner com interpretação técnica avançada</h4>
+                      <p class="text-white/60 text-sm">Não apenas lemos códigos, interpretamos o que eles dizem sobre o passado do carro.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Reverted Report Card (Old Model Style) -->
+              <div class="relative">
+                <div class="bg-[#2A3F66] rounded-3xl p-8 shadow-2xl text-white border border-white/10">
+                  <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-pearaqua font-bold tracking-widest text-sm uppercase">EXEMPLO DE RELATÓRIO</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pearaqua"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  </div>
+
+                  <div class="space-y-6">
+                    <!-- Motor -->
+                    <div>
+                      <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm">Motor</span>
+                        <span class="text-[#9FD3C7] font-bold text-sm">Aprovado</span>
+                      </div>
+                      <div class="h-2 bg-navy/50 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#9FD3C7] w-[92%]"></div>
+                      </div>
+                    </div>
+
+                    <!-- Transmissão -->
+                    <div>
+                      <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm">Transmissão</span>
+                        <span class="text-[#f38383] font-bold text-sm">Risco</span>
+                      </div>
+                      <div class="h-2 bg-navy/50 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#f38383] w-[45%]"></div>
+                      </div>
+                    </div>
+
+                    <!-- Sistema de Arrefecimento -->
+                    <div>
+                      <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm">Sistema de Arrefecimento</span>
+                        <span class="text-[#F0CD7D] font-bold text-sm">Com Apontamento</span>
+                      </div>
+                      <div class="h-2 bg-navy/50 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#F0CD7D] w-[70%]"></div>
+                      </div>
+                    </div>
+
+                    <!-- Pintura -->
+                    <div>
+                      <div class="flex justify-between mb-2">
+                        <span class="font-bold text-sm">Pintura</span>
+                        <span class="text-[#9FD3C7] font-bold text-sm">Aprovado</span>
+                      </div>
+                      <div class="h-2 bg-navy/50 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#9FD3C7] w-[98%]"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-8 pt-6 border-t border-white/10 text-center">
+                    <p class="text-white/70 italic text-sm mb-6">"Risco grave de transmissão detectado."</p>
+                    <div class="inline-block bg-red-500/20 border border-red-500/30 px-6 py-2 rounded-lg">
+                      <span class="text-red-400 font-black text-xs tracking-widest uppercase">RISCO GRAVE DETECTADO</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Detailed Services -->
+        <section id="servicos-detalhes" class="py-24 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h2 class="section-title">Serviços Que Prestamos</h2>
+              <p class="section-subtitle max-w-4xl mx-auto">
+                Realizamos uma inspeção completa e rigorosa em mais de 300 itens do carro, para garantir sua total tranquilidade.
+                Você recebe toda essa análise em um relatório completo com descrições personalizadas para cada item observado que foi - nada de avaliações genéricas como “OK” ou “Com Apontamento”, comuns em outras vistorias - além de links para fotos e vídeos, que te darão explicações claras.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Service Item 1 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Documentação e identidade do veículo</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Verificamos registros nos vidros, numeração de chassi e motor, placa e etiquetas — para garantir que o carro é exatamente o que parece ser.</p>
+              </div>
+
+              <!-- Service Item 2 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Lataria e pintura</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Usamos medidor de espessura para identificar repinturas, detectar amassados, trincas, diferenças de tom e indícios de acidentes escondidos.</p>
+              </div>
+
+              <!-- Service Item 3 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Estrutura e colunas</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Inspecionamos longarinas, colunas A, B e C, assoalho e cofre do motor para detectar batidas graves, soldas e reparos que afetam a segurança estrutural do veículo.</p>
+              </div>
+
+              <!-- Service Item 4 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Motor e transmissão</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Avaliamos vazamentos, estado das juntas, turbina, correias, coxins, filtros e óleo — tanto visualmente quanto com o motor em funcionamento.</p>
+              </div>
+
+              <!-- Service Item 5 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Sistema elétrico e bateria</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Avaliamos e medimos sensores, chicote elétrico, tensão da bateria em repouso, durante a partida e com o alternador em carga para mapear o real estado da elétrica do carro.</p>
+              </div>
+
+              <!-- Service Item 6 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Freios, suspensão e direção</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Inspecionamos discos, pastilhas, tambores, amortecedores, bandejas, buchas, bieletas e semi-eixos — os itens que mais afetam segurança e custo de manutenção.</p>
+              </div>
+
+              <!-- Service Item 7 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Ar-condicionado</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Medimos a temperatura real do ar-condicionado e avaliamos compressor, condensador e evaporadora.</p>
+              </div>
+
+              <!-- Service Item 8 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Sistema de Arrefecimento</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Checamos fluido, radiador, bomba d'água e verificamos risco de corrosão do sistema.</p>
+              </div>
+
+              <!-- Service Item 9 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Scanner eletrônico</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Leitura completa da central do motor, com identificação de códigos de erros, possíveis adulterações, correções de combustível e ignição, pressão no coletor de entrada, pressão de combustível, entre outros parâmetros.</p>
+              </div>
+
+              <!-- Service Item 10 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Test drive completo</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Avaliamos partida, trocas de marcha, freios em alta velocidade, estabilidade em curvas, ruídos em piso irregular, comportamento do câmbio e motor em operação.</p>
+              </div>
+
+              <!-- Service Item 11 -->
+              <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-seagrass/30 transition-all hover:shadow-lg group">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-3 bg-white rounded-xl shadow-sm group-hover:bg-seagrass group-hover:text-white transition-colors text-seagrass">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                  </div>
+                  <h3 class="font-bold text-xl text-navy leading-tight">Interior e acabamento</h3>
+                </div>
+                <p class="text-navy/70 leading-relaxed">Verificamos bancos, carpete, forro do teto, cintos de segurança, painel, airbag e itens elétricos como vidros, retrovisores, multimídia, ar-quente e muitos outros.</p>
+              </div>
+            </div>
+
+            <div class="mt-16 text-center">
+              <div class="inline-block bg-seagrass/10 px-10 py-6 rounded-3xl border border-seagrass/20 shadow-sm">
+                <span class="text-navy font-black text-4xl">Investimento: R$ 799,00</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Risks -->
+        <section class="py-24 bg-gray-50">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-black text-navy leading-tight">
+                Vistoria pré compra é um <span class="text-pearaqua">custo a mais?</span>
+              </h2>
+            </div>
+            <div class="bg-white rounded-[3rem] shadow-xl overflow-hidden border border-gray-100">
+              <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 p-12 md:p-20 bg-navy text-white">
+                  <div class="inline-flex items-center gap-2 px-4 py-2 bg-red-500/20 text-red-400 rounded-full text-xs font-bold mb-8 uppercase tracking-widest">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    Atenção aos Riscos
+                  </div>
+                  <h2 class="text-4xl font-black mb-8 leading-tight">
+                    O barato que sai <span class="text-red-400">muito caro.</span>
+                  </h2>
+                  <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-white/80">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                      <span>Veículo com histórico de colisão estrutural</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-white/80">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                      <span>Motor com desgaste oculto</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="lg:w-1/2 p-12 md:p-20 flex flex-col justify-center">
+                  <div class="mb-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-seagrass mb-4"><path d="m22 17-5-5-5 5"/><path d="m22 7-5 5-5-5"/><path d="M16 12H2"/><path d="M10 12H2"/></svg>
+                    <h3 class="text-3xl font-bold mb-6">A Vistoria se paga sozinha.</h3>
+                    <p class="text-navy/70 text-lg leading-relaxed">
+                      A identificação de defeitos gera um poder de negociação enorme. Nossos clientes frequentemente conseguem <strong>descontos muito maiores</strong> que o valor da nossa vistoria, evitando problemas futuros e fortalecendo sua posição na compra.
+                    </p>
+                  </div>
+                  <a href="https://wa.me/5511943201828" target="_blank" rel="noopener noreferrer" class="btn-primary w-full md:w-max inline-flex items-center justify-center">
+                    Agende a Vistoria Agora
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contato" class="py-24 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+              <div>
+                <h2 class="section-title">Onde Estamos</h2>
+                <p class="text-lg text-navy/70 mb-10">
+                  Venha nos visitar ou agende uma inspeção em domicílio. Atendemos toda a região de São Paulo.
+                </p>
+                
+                <div class="space-y-8">
+                  <div class="flex items-start gap-6">
+                    <div class="p-4 bg-gray-50 rounded-2xl text-seagrass">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-xl mb-1">Endereço</h4>
+                      <p class="text-navy/60">Rua Doutor Franco da Rocha 477, Perdizes<br />São Paulo, SP - Brasil</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start gap-6">
+                    <div class="p-4 bg-gray-50 rounded-2xl text-seagrass">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-xl mb-1">WhatsApp</h4>
+                      <p class="text-navy/60">(11) 94320-1828</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start gap-6">
+                    <div class="p-4 bg-gray-50 rounded-2xl text-seagrass">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-xl mb-1">Instagram</h4>
+                      <p class="text-navy/60">@carrocerto.vistoria</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.653497891823!2d-46.68114342467005!3d-23.54497647881183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce58209841804b%3A0x637841793740e561!2sR.%20Doutor%20Franco%20da%20Rocha%2C%20477%20-%20Perdizes%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border: 0" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div id="blog-content" class="hidden">
+        <div class="pt-24 pb-24 bg-gray-50 min-h-screen">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h1 class="text-4xl md:text-6xl font-black text-navy mb-6">Blog Carro Certo</h1>
+              <p class="text-lg text-navy/70 max-w-2xl mx-auto">
+                Informação técnica e dicas práticas para você nunca mais errar na compra de um veículo usado.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:-translate-y-2 transition-transform cursor-pointer blog-post-card" data-post-id="sinais-batido">
+                <div class="relative h-56 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=800" alt="Blog Post" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer" />
+                  <div class="absolute top-4 left-4 bg-pearaqua text-navy text-xs font-bold px-3 py-1 rounded-full">Dicas de Compra</div>
+                </div>
+                <div class="p-8">
+                  <h2 class="text-xl font-bold text-navy mb-4 group-hover:text-seagrass transition-colors">5 Sinais de que o Carro que Você Quer Comprar foi Batido</h2>
+                  <p class="text-navy/70 text-sm mb-6 line-clamp-3">Aprenda a identificar reparos estruturais e repinturas que podem esconder um passado problemático.</p>
+                  <button class="flex items-center gap-2 text-seagrass font-bold text-sm group/btn">
+                    Ler mais <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/btn:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                </div>
+              </article>
+
+              <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:-translate-y-2 transition-transform cursor-pointer blog-post-card" data-post-id="quilometragem-adulterada">
+                <div class="relative h-56 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800" alt="Painel de carro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer" />
+                  <div class="absolute top-4 left-4 bg-pearaqua text-navy text-xs font-bold px-3 py-1 rounded-full">Segurança</div>
+                </div>
+                <div class="p-8">
+                  <h2 class="text-xl font-bold text-navy mb-4 group-hover:text-seagrass transition-colors">Como Detectar Quilometragem Adulterada</h2>
+                  <p class="text-navy/70 text-sm mb-6 line-clamp-3">O hodômetro pode mentir, mas o desgaste de outros componentes conta a história real do veículo.</p>
+                  <button class="flex items-center gap-2 text-seagrass font-bold text-sm group/btn">
+                    Ler mais <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/btn:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                </div>
+              </article>
+
+              <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:-translate-y-2 transition-transform cursor-pointer blog-post-card" data-post-id="vicios-ocultos">
+                <div class="relative h-56 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800" alt="Motor de carro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer" />
+                  <div class="absolute top-4 left-4 bg-pearaqua text-navy text-xs font-bold px-3 py-1 rounded-full">Mecânica</div>
+                </div>
+                <div class="p-8">
+                  <h2 class="text-xl font-bold text-navy mb-4 group-hover:text-seagrass transition-colors">Vícios Ocultos: O que o Vendedor Não Te Conta</h2>
+                  <p class="text-navy/70 text-sm mb-6 line-clamp-3">Problemas crônicos de motor e câmbio que só aparecem após alguns quilômetros de uso.</p>
+                  <button class="flex items-center gap-2 text-seagrass font-bold text-sm group/btn">
+                    Ler mais <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/btn:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                </div>
+              </article>
+
+              <article class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:-translate-y-2 transition-transform cursor-pointer blog-post-card" data-post-id="leilao-vale-a-pena">
+                <div class="relative h-56 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&q=80&w=800" alt="Pátio de carros" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer" />
+                  <div class="absolute top-4 left-4 bg-pearaqua text-navy text-xs font-bold px-3 py-1 rounded-full">Mercado</div>
+                </div>
+                <div class="p-8">
+                  <h2 class="text-xl font-bold text-navy mb-4 group-hover:text-seagrass transition-colors">Carro de Leilão: Vale a Pena o Risco?</h2>
+                  <p class="text-navy/70 text-sm mb-6 line-clamp-3">Entenda as diferenças entre leilão de financeira, seguradora e frota antes de fechar negócio.</p>
+                  <button class="flex items-center gap-2 text-seagrass font-bold text-sm group/btn">
+                    Ler mais <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/btn:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="post-content" class="hidden">
+        <div class="pt-32 pb-24 bg-white min-h-screen">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <button id="back-to-blog" class="flex items-center gap-2 text-seagrass font-bold mb-8 hover:-translate-x-1 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Voltar para o Blog
+            </button>
+            
+            <div id="post-detail">
+              <!-- Content will be injected here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="bg-navy text-white py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+              <div class="flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pearaqua"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+              </div>
+              <span class="text-xl font-black tracking-tighter">CARRO <span class="text-seagrass">CERTO</span></span>
+            </div>
+            <div class="text-white/40 text-sm text-center md:text-right">
+              <p>&copy; 2026 Carro Certo Vistoria Automotiva. Todos os direitos reservados.</p>
+              <p class="mt-1">Desenvolvido com foco na sua segurança.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Floating WhatsApp Button -->
+      <a href="https://wa.me/5511943201828" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+
