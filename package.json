@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "serve -s dist -l 3000",
     "start": "node server.js",
     "clean": "rm -rf dist",
     "lint": "echo 'No linting needed for HTML/CSS'"
@@ -15,6 +15,7 @@
     "@tailwindcss/vite": "^4.1.14",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
+    "serve": "^14.2.0"
     "vite": "^6.2.0"
   },
   "devDependencies": {
