@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "serve -s dist -l 3000",
+    "preview": "serve -s dist",
     "start": "node server.js",
     "clean": "rm -rf dist",
     "lint": "echo 'No linting needed for HTML/CSS'"
