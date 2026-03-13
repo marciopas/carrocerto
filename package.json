@@ -4,12 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "serve -s dist -l $PORT",
-    "start": "node server.js",
-    "clean": "rm -rf dist",
-    "lint": "echo 'No linting needed for HTML/CSS'"
+    "dev": "vite --port=3000 --host=0.0.0.0",
+  "build": "vite build",
+  "preview": "vite preview --host 0.0.0.0 --port 3000"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
